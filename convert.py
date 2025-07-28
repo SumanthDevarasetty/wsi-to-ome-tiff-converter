@@ -139,13 +139,16 @@ def load_and_process_annotations_all_regions(nm, x, y, all_bboxes_scaled, slide_
     ont_nm = []
     channel_nm = []
     
-    ontology_names = ['0001225','0000073','0000074','0009773','0001637','0006851','0005215']
+    ontology_names = ['0000073','0000074','0009773','0001637','0006851']
 
     annotation_mapping = parse_xml_annotation_mapping(nm)
-
+    '''
     # LOAD CORTEX
     #mask = xml_to_mask(nm,(0,0),(x,y),[1])
-    mask = xml_to_mask(nm,(0,0),(x,y),[annotation_mapping["cortical_interstitium"]])
+    cortex_key = annotation_mapping.get("cortical_interstitium", None)
+    if not cortex_key:
+        print("Warning: No cortex annotation found in XML")
+    mask = xml_to_mask(nm,(0,0),(x,y),[cortex_key])
     mask = mask.astype(np.uint8)
     cortex = apply_multiple_bounding_boxes(mask, all_bboxes_scaled)
     obj_num.append(1)
@@ -153,10 +156,10 @@ def load_and_process_annotations_all_regions(nm, x, y, all_bboxes_scaled, slide_
     channel_nm.append(channel_names[0])
     ont_nm.append(ontology_names[0])
     full[0,:,:] = cortex
-    
+    '''
     # MultiC Annotations 
     #mask = xml_to_mask(nm,(0,0),(x,y),[3,4,5,6])
-    mask = xml_to_mask(nm,(0,0),(x,y), [annotation_mapping["non_globally_sclerotic_glomeruli"],annotation_mapping["globally_sclerotic_glomeruli"],annotation_mapping["tubules"],annotation_mapping["muscular_vessels"]])
+    mask = xml_to_mask(nm,(0,0),(x,y), [annotation_mapping.get("non_globally_sclerotic_glomeruli", None),annotation_mapping.get("globally_sclerotic_glomeruli", None),annotation_mapping.get("tubules", None),annotation_mapping.get("muscular_vessels", None)])
     mask = mask.astype(np.uint8)
     multic = apply_multiple_bounding_boxes(mask, all_bboxes_scaled)
     print("Shape of multic:", multic.shape)
@@ -165,25 +168,31 @@ def load_and_process_annotations_all_regions(nm, x, y, all_bboxes_scaled, slide_
     
     # Process glomeruli
     #glom = (multic==3).astype(np.uint8)
-    glom = (multic==annotation_mapping["non_globally_sclerotic_glomeruli"]).astype(np.uint8)
+    glom_key = annotation_mapping.get("non_globally_sclerotic_glomeruli", None)
+    if not glom_key:
+        print("Warning: No glom annotation found in XML")
+    glom = (multic==glom_key).astype(np.uint8)
     glom = measure.label(glom)
     obj_num.append(np.max(glom))
-    channel_num.append(1)
-    channel_nm.append(channel_names[1])
-    ont_nm.append(ontology_names[1])
-    full[1,:,:] = glom
+    channel_num.append(0)
+    channel_nm.append(channel_names[0])
+    ont_nm.append(ontology_names[0])
+    full[0,:,:] = glom
     del glom
     
     #sglom = (multic==4).astype(np.uint8)
-    sglom = (multic==annotation_mapping["globally_sclerotic_glomeruli"]).astype(np.uint8)
+    sglom_key = annotation_mapping.get("globally_sclerotic_glomeruli", None)
+    if not sglom_key:
+        print("Warning: No sglom annotation found in XML")
+    sglom = (multic==sglom_key).astype(np.uint8)
     sglom = measure.label(sglom)
     #sglom2 = sglom + n_gloms
     #sglom2[sglom==0]=0
     obj_num.append(np.max(sglom))
-    channel_num.append(2)
-    channel_nm.append(channel_names[2])
-    ont_nm.append(ontology_names[2])
-    full[2,:,:] = sglom
+    channel_num.append(1)
+    channel_nm.append(channel_names[1])
+    ont_nm.append(ontology_names[1])
+    full[1,:,:] = sglom
     del sglom
     
     #sglom=sglom2
@@ -191,43 +200,51 @@ def load_and_process_annotations_all_regions(nm, x, y, all_bboxes_scaled, slide_
     
     # Process tubules
     #tub = (multic==5).astype(np.uint8)
-    tub = (multic==annotation_mapping["tubules"]).astype(np.uint8)
+    tub_key = annotation_mapping.get("tubules", None)
+    if not tub_key:
+        print("Warning: No tubule annotation found in XML")
+    tub = (multic==tub_key).astype(np.uint8)
     tub = measure.label(tub)
     obj_num.append(np.max(tub))
-    channel_num.append(3)
-    channel_nm.append(channel_names[3])
-    ont_nm.append(ontology_names[3])
-    full[3,:,:] = tub
+    channel_num.append(2)
+    channel_nm.append(channel_names[2])
+    ont_nm.append(ontology_names[2])
+    full[2,:,:] = tub
     del tub
     
     # Process arteries
     #art = (multic==6).astype(np.uint8)
-    art = (multic==annotation_mapping["muscular_vessels"]).astype(np.uint8)
+    art_key = annotation_mapping.get("muscular_vessels", None)
+    if not art_key:
+        print("Warning: No muscular_vessels annotation found in XML")
+    art = (multic==art_key).astype(np.uint8)
     art = measure.label(art)
     obj_num.append(np.max(art))
-    channel_num.append(4)
-    channel_nm.append(channel_names[4])
-    ont_nm.append(ontology_names[4])
-    full[4,:,:] = art
+    channel_num.append(3)
+    channel_nm.append(channel_names[3])
+    ont_nm.append(ontology_names[3])
+    full[3,:,:] = art
     del art,multic
     
     # PTC
     #mask = xml_to_mask(nm,(0,0),(x,y),[7])
     #mask = xml_to_mask(nm,(0,0),(x,y),[annotation_mapping["peritubular_capillaries"]])
-    ptc_id = annotation_mapping.get("peritubular_capillaries", annotation_mapping.get("ptc", None))
-    mask = xml_to_mask(nm,(0,0),(x,y),[ptc_id])
+    ptc_key = annotation_mapping.get("peritubular_capillaries", annotation_mapping.get("ptc", None))
+    if not ptc_key:
+        print("Warning: No PTC annotation found in XML")
+    mask = xml_to_mask(nm,(0,0),(x,y),[ptc_key])
     mask = mask.astype(np.uint8)
     #ptc = apply_bounding_box(mask,bbox_oi)
     ptc = apply_multiple_bounding_boxes(mask, all_bboxes_scaled)
     #ptc = ptc*cortex
     ptc = measure.label(ptc)
     obj_num.append(np.max(ptc))
-    channel_num.append(5)
-    channel_nm.append(channel_names[5])
-    ont_nm.append(ontology_names[5])
-    full[5,:,:] = ptc
-    del ptc,cortex
-    
+    channel_num.append(4)
+    channel_nm.append(channel_names[4])
+    ont_nm.append(ontology_names[4])
+    full[4,:,:] = ptc
+    del ptc
+    '''
     # IFTA
     #mask = xml_to_mask(nm,(0,0),(x,y),[8])
     #mask = xml_to_mask(nm,(0,0),(x,y),[annotation_mapping["IFTA"]])
@@ -242,7 +259,7 @@ def load_and_process_annotations_all_regions(nm, x, y, all_bboxes_scaled, slide_
     mask = mask.astype(np.uint8)
     #ifta = apply_bounding_box(mask,bbox_oi)
     ifta = apply_multiple_bounding_boxes(mask, all_bboxes_scaled)
-    '''
+    
     if slide_id == 'S-2010-012854':
         print('Loading 2nd IFTA in: {}'.format(slide_id))
         ifta2 = xml_to_mask(nm.split('.xml')[0]+'_IFTA2.xml',(0,0),(x,y),[1])
@@ -250,7 +267,7 @@ def load_and_process_annotations_all_regions(nm, x, y, all_bboxes_scaled, slide_
         #ifta2 = apply_bounding_box(ifta2, bbox_oi)
         ifta2 = apply_multiple_bounding_boxes(ifta2, all_bboxes_scaled)
         ifta = ifta+ifta2
-    '''
+    
     obj_num.append(1)
     channel_num.append(6)
     channel_nm.append(channel_names[6])
@@ -258,7 +275,7 @@ def load_and_process_annotations_all_regions(nm, x, y, all_bboxes_scaled, slide_
     
     full[6,:,:] = ifta
     del ifta
-    
+    '''
     return full, obj_num, channel_num, ont_nm, channel_nm
 
 def create_csv_data(channel_num, channel_nm, slide, ont_nm, obj_num, protocol_doi):
@@ -308,29 +325,40 @@ def write_ome_tiff(slide_name, full, channel_names, save_dir, slide):
     with open(xml_name,'wt+') as fh:
         fh.write(xml_data)
 
-def process_single_slide_no_qc(slide, save_dir, channel_names, area_thresh, protocol_doi):
+def process_single_slide_no_qc(slide, slide_dir, save_dir, channel_names, area_thresh, protocol_doi):
     """Process a single slide through the entire pipeline"""
+    print(f"[DEBUG] Starting slide: {slide}")
+    slide_id = slide.split('/')[-1].split('_')[0]
     
-    #pad = 100
-    slide_name = save_dir + slide.split('/')[-1].split('.')[0] + '.ome.tiff'
+    slide_id_xml = slide.split('/')[-1].split('.')[0]
+    # CREATE DIRECTORY FOR THIS SLIDE
+    slide_output_dir = os.path.join(save_dir, slide_id_xml) + '/'
+    os.makedirs(slide_output_dir, exist_ok=True)
+    
+    slide_name = slide_output_dir + slide.split('/')[-1].split('.')[0] + '.ome.tiff'
     seg_name = slide_name.split('.ome')[0] + '.segmentations.ome.tiff'
 
     if os.path.exists(seg_name):
         print('Skipping: {}'.format(seg_name))
         return None
-
+    
+    print(f"[DEBUG] Loading slide...")
     sl = openslide.OpenSlide(slide)
     x,y = sl.dimensions
     x=int(x)
     y=int(y)
 
-    nm = slide.rsplit(".", 1)[0]+'.xml'
+    #nm = slide.rsplit(".", 1)[0]+'.xml'
+    # Construct XML path: /orange/.../Annotations/slide_id/slide_id.xml
+    # Derive XML path from slide_dir
+    xml_base_dir = slide_dir.replace('/Images/', '/Annotations/')
+    slide_id_xml = slide.split('/')[-1].split('.')[0]  # Remove extension, keep full name
+    nm = os.path.join(xml_base_dir, slide_id_xml, slide_id_xml + '.xml')
+    print("Path to xml file: ", nm)
     if not os.path.exists(nm):
         return None
         
-    slide_id = slide.split('/')[-1].split('_')[0]
-    
-    if os.path.exists(save_dir + slide.split('/')[-1].split('.')[0] + '_cortex.png'):
+    if os.path.exists(slide_output_dir + slide.split('/')[-1].split('.')[0] + '_cortex.png'):
         print('Already done with: {}'.format(slide_id))
         return None
     
@@ -370,7 +398,7 @@ def process_single_slide_no_qc(slide, save_dir, channel_names, area_thresh, prot
     csv_lines = create_csv_data(channel_num, channel_nm, slide, ont_nm, obj_num, protocol_doi)
     
     # Write OME-TIFF
-    write_ome_tiff(slide_name, full, channel_names, save_dir, slide)
+    write_ome_tiff(slide_name, full, channel_names, slide_output_dir, slide)
     
     # Convert to final format
     output_name = run_convert(slide_name)
@@ -384,11 +412,13 @@ def main():
     
     # Configuration
     wsi_ext = ['.svs','.scn']
-    channel_names = ['cortex','non_globally_sclerotic_glomeruli','globally_sclerotic_glomeruli','tubules','muscular_vessels','peritubular_capillaries','IFTA']
-    ontology_names = ['0001225','0000073','0000074','0009773','0001637','0006851','0005215']
+    channel_names = ['non_globally_sclerotic_glomeruli','globally_sclerotic_glomeruli','tubules','muscular_vessels','peritubular_capillaries']
+    ontology_names = ['0000073','0000074','0009773','0001637','0006851']
 
-    slide_dir = '/blue/pinaki.sarder/sdevarasetty/KPMP/kpmp_test/'
-    save_dir = '/blue/pinaki.sarder/sdevarasetty/KPMP/kpmp_convert_test/sumanth/'
+    #slide_dir = '/blue/pinaki.sarder/sdevarasetty/KPMP/kpmp_test/'
+    #save_dir = '/blue/pinaki.sarder/sdevarasetty/KPMP/kpmp_convert_test/sumanth/'
+    slide_dir = '/orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_3/Images/'
+    save_dir = '/orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_3/Segmentations/'
     
     area_thresh = 1000
     csv_file = 'segmentation-masks.csv'
@@ -415,7 +445,7 @@ def main():
         
         # Process single slide
         #slide_csv_lines = process_single_slide(slide, save_dir, qc_data, double_slides, channel_names, area_thresh, protocol_doi)
-        slide_csv_lines = process_single_slide_no_qc(slide, save_dir, channel_names, area_thresh, protocol_doi)
+        slide_csv_lines = process_single_slide_no_qc(slide, slide_dir, save_dir, channel_names, area_thresh, protocol_doi)
 
         if slide_csv_lines is not None:
             csv_lines.extend(slide_csv_lines)

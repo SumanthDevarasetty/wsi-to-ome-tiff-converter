@@ -1,0 +1,440 @@
+SLURM_JOBID=8310440
+SLURM_JOB_NODELIST=c0604a-s13
+SLURM_NNODES=1
+SLURMTMPDIR=
+working directory = /blue/pinaki.sarder/sdevarasetty/KPMP/wsi-to-ome-tiff-converter
+
+Currently Loaded Modules:
+  1) git/2.30.1   2) jupyter/6.5.4   3) conda/25.3.1
+
+ 
+
+/blue/pinaki.sarder/sdevarasetty/conda/envs/kpmpenv/bin/python
+Launch job
+0
+Processing 80 slides without QC data...
+Will process ALL tissue regions found in each slide
+  0%|                                                                                                                                                                   | 0/80 [00:00<?, ?it/s]/orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2301-008476_PAS_2of2/S-2301-008476_PAS_2of2.ome.tiff
+OMETiffReader initializing /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2301-008476_PAS_2of2/S-2301-008476_PAS_2of2.ome.tiff
+Reading IFDs
+Populating metadata
+[OME-TIFF] -> /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2301-008476_PAS_2of2/S-2301-008476_PAS_2of2.segmentations.ome.tiff [OME-TIFF]
+Switching to BigTIFF (by file size)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+[done]
+3187.03s elapsed (1594.1333+104613.1ms per plane, 264ms overhead)
+/blue/pinaki.sarder/sdevarasetty/KPMP/wsi-to-ome-tiff-converter/convert.py:346: UserWarning: compatibility: aliasing tiffslide.TiffSlide to 'OpenSlide'
+  sl = openslide.OpenSlide(slide)
+  1%|█▊                                                                                                                                                  | 1/80 [1:00:29<79:38:57, 3629.59s/it]/orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2302-002588_PAS_2of2/S-2302-002588_PAS_2of2.ome.tiff
+OMETiffReader initializing /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2302-002588_PAS_2of2/S-2302-002588_PAS_2of2.ome.tiff
+Reading IFDs
+Populating metadata
+[OME-TIFF] -> /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2302-002588_PAS_2of2/S-2302-002588_PAS_2of2.segmentations.ome.tiff [OME-TIFF]
+Switching to BigTIFF (by file size)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+[done]
+1816.775s elapsed (783.86664+59708.6ms per plane, 1795ms overhead)
+/blue/pinaki.sarder/sdevarasetty/KPMP/wsi-to-ome-tiff-converter/convert.py:346: UserWarning: compatibility: aliasing tiffslide.TiffSlide to 'OpenSlide'
+  sl = openslide.OpenSlide(slide)
+  2%|███▋                                                                                                                                                | 2/80 [1:35:56<59:29:12, 2745.54s/it]/orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2107-015176_PAS_2of2/S-2107-015176_PAS_2of2.ome.tiff
+OMETiffReader initializing /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2107-015176_PAS_2of2/S-2107-015176_PAS_2of2.ome.tiff
+Reading IFDs
+Populating metadata
+[OME-TIFF] -> /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2107-015176_PAS_2of2/S-2107-015176_PAS_2of2.segmentations.ome.tiff [OME-TIFF]
+Switching to BigTIFF (by file size)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+[done]
+965.981s elapsed (193.7+31994.3ms per plane, 264ms overhead)
+/blue/pinaki.sarder/sdevarasetty/KPMP/wsi-to-ome-tiff-converter/convert.py:346: UserWarning: compatibility: aliasing tiffslide.TiffSlide to 'OpenSlide'
+  sl = openslide.OpenSlide(slide)
+  4%|█████▌                                                                                                                                              | 3/80 [1:55:36<43:26:10, 2030.79s/it]/orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2212-003224_PAS_2of2/S-2212-003224_PAS_2of2.ome.tiff
+OMETiffReader initializing /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2212-003224_PAS_2of2/S-2212-003224_PAS_2of2.ome.tiff
+Reading IFDs
+Populating metadata
+[OME-TIFF] -> /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2212-003224_PAS_2of2/S-2212-003224_PAS_2of2.segmentations.ome.tiff [OME-TIFF]
+Switching to BigTIFF (by file size)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+[done]
+335.238s elapsed (153.3+11010.866ms per plane, 263ms overhead)
+/blue/pinaki.sarder/sdevarasetty/KPMP/wsi-to-ome-tiff-converter/convert.py:346: UserWarning: compatibility: aliasing tiffslide.TiffSlide to 'OpenSlide'
+  sl = openslide.OpenSlide(slide)
+  5%|███████▍                                                                                                                                            | 4/80 [2:02:17<29:17:27, 1387.46s/it]/orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2007-002756_PAS_2of2/S-2007-002756_PAS_2of2.ome.tiff
+OMETiffReader initializing /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2007-002756_PAS_2of2/S-2007-002756_PAS_2of2.ome.tiff
+Reading IFDs
+Populating metadata
+[OME-TIFF] -> /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2007-002756_PAS_2of2/S-2007-002756_PAS_2of2.segmentations.ome.tiff [OME-TIFF]
+Switching to BigTIFF (by file size)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+[done]
+719.293s elapsed (138.86667+23812.3ms per plane, 273ms overhead)
+/blue/pinaki.sarder/sdevarasetty/KPMP/wsi-to-ome-tiff-converter/convert.py:346: UserWarning: compatibility: aliasing tiffslide.TiffSlide to 'OpenSlide'
+  sl = openslide.OpenSlide(slide)
+  6%|█████████▎                                                                                                                                          | 5/80 [2:16:56<25:04:48, 1203.85s/it]/orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2008-006024_PAS_1of1/S-2008-006024_PAS_1of1.ome.tiff
+OMETiffReader initializing /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2008-006024_PAS_1of1/S-2008-006024_PAS_1of1.ome.tiff
+Reading IFDs
+Populating metadata
+[OME-TIFF] -> /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2008-006024_PAS_1of1/S-2008-006024_PAS_1of1.segmentations.ome.tiff [OME-TIFF]
+Switching to BigTIFF (by file size)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+[done]
+129752.32s elapsed (15075.733+4309626.0ms per plane, 265ms overhead)
+/blue/pinaki.sarder/sdevarasetty/KPMP/wsi-to-ome-tiff-converter/convert.py:346: UserWarning: compatibility: aliasing tiffslide.TiffSlide to 'OpenSlide'
+  sl = openslide.OpenSlide(slide)
+  8%|██████████▉                                                                                                                                      | 6/80 [38:42:22<932:45:44, 45377.63s/it]/orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2108-021649_PAS_2of2/S-2108-021649_PAS_2of2.ome.tiff
+OMETiffReader initializing /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2108-021649_PAS_2of2/S-2108-021649_PAS_2of2.ome.tiff
+Reading IFDs
+Populating metadata
+[OME-TIFF] -> /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2108-021649_PAS_2of2/S-2108-021649_PAS_2of2.segmentations.ome.tiff [OME-TIFF]
+Switching to BigTIFF (by file size)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+[done]
+10409.892s elapsed (7443.8+339236.84ms per plane, 5401ms overhead)
+/blue/pinaki.sarder/sdevarasetty/KPMP/wsi-to-ome-tiff-converter/convert.py:346: UserWarning: compatibility: aliasing tiffslide.TiffSlide to 'OpenSlide'
+  sl = openslide.OpenSlide(slide)
+  9%|████████████▋                                                                                                                                    | 7/80 [42:05:35<700:09:56, 34528.72s/it]/orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2109-019244_PAS_2of2/S-2109-019244_PAS_2of2.ome.tiff
+OMETiffReader initializing /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2109-019244_PAS_2of2/S-2109-019244_PAS_2of2.ome.tiff
+Reading IFDs
+Populating metadata
+[OME-TIFF] -> /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2109-019244_PAS_2of2/S-2109-019244_PAS_2of2.segmentations.ome.tiff [OME-TIFF]
+Switching to BigTIFF (by file size)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+[done]
+5694.272s elapsed (7328.8+182267.4ms per plane, 5302ms overhead)
+/blue/pinaki.sarder/sdevarasetty/KPMP/wsi-to-ome-tiff-converter/convert.py:346: UserWarning: compatibility: aliasing tiffslide.TiffSlide to 'OpenSlide'
+  sl = openslide.OpenSlide(slide)
+ 10%|██████████████▌                                                                                                                                  | 8/80 [43:56:21<513:02:50, 25652.37s/it]/orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2210-016820_PAS_2of3/S-2210-016820_PAS_2of3.ome.tiff
+OMETiffReader initializing /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2210-016820_PAS_2of3/S-2210-016820_PAS_2of3.ome.tiff
+Reading IFDs
+Populating metadata
+[OME-TIFF] -> /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2210-016820_PAS_2of3/S-2210-016820_PAS_2of3.segmentations.ome.tiff [OME-TIFF]
+Switching to BigTIFF (by file size)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)
+	Converted 4/5 planes (80%)
+	Converted 5/5 planes (100%)
+[done]
+10442.08s elapsed (8968.333+338754.9ms per plane, 5303ms overhead)
+/blue/pinaki.sarder/sdevarasetty/KPMP/wsi-to-ome-tiff-converter/convert.py:346: UserWarning: compatibility: aliasing tiffslide.TiffSlide to 'OpenSlide'
+  sl = openslide.OpenSlide(slide)
+ 11%|████████████████▎                                                                                                                                | 9/80 [47:16:55<421:57:15, 21394.87s/it]/orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2112-014324_PAS_1of1/S-2112-014324_PAS_1of1.ome.tiff
+OMETiffReader initializing /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2112-014324_PAS_1of1/S-2112-014324_PAS_1of1.ome.tiff
+Reading IFDs
+Populating metadata
+[OME-TIFF] -> /orange/pinaki.sarder/Davy_Jones_Locker/KPMP/KPMP_AtlasRelease_Q32025/Batch_2/Segmentations/S-2112-014324_PAS_1of1/S-2112-014324_PAS_1of1.segmentations.ome.tiff [OME-TIFF]
+Switching to BigTIFF (by file size)
+Tile size = 512 x 512
+	Converted 1/5 planes (20%)
+	Converted 2/5 planes (40%)
+	Converted 3/5 planes (60%)

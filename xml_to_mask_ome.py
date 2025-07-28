@@ -114,9 +114,9 @@ def regions_in_mask(xml_path, root, bounds, verbose=1):
             points = [(int(x),int(y)) for x,y in zip(verts_x,verts_y)]
             contour = np.array(points,dtype=np.int32).reshape(-1,1,2)
             area = cv2.contourArea(contour)
-            if annotationID in [str(annotation_mapping["non_globally_sclerotic_glomeruli"]),str(annotation_mapping["globally_sclerotic_glomeruli"])] and area <1600: #gloms
+            if annotationID in [str(annotation_mapping.get("non_globally_sclerotic_glomeruli", None)),str(annotation_mapping.get("globally_sclerotic_glomeruli", None))] and area <1600: #gloms
                 continue
-            if annotationID == str(annotation_mapping["muscular_vessels"]) and area <1000: #muscular
+            if annotationID == str(annotation_mapping.get("muscular_vessels", None)) and area <1000: #muscular
                 continue
             reg_IDs.append({'regionID' : Region.attrib['Id'], 'annotationID' : annotationID})
             regs.append(np.swapaxes(np.array((verts_x,verts_y)),0,1))
